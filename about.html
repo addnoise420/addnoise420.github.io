@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | TUNDRA Creative Studio</title>
+    <link rel="icon" type="image/x-icon" href="images/icon-01.png" />
+    <meta name="author" content="Wildan Alfurqon" />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css3/styles.css" />
+
+    <!-- greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+    <!-- locomotive-scroll -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.2.5/dist/locomotive-scroll.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.2.5/dist/locomotive-scroll.min.js"></script>
+  </head>
+
+  <body id="js-scroll">
+    <div class="wrapper">
+      <!-- menu -->
+      <div class="wrapper">
+        <div class="header">
+          <div class="link"><a href="index.html">HOME</a></div>
+        </div>
+      </div>
+      <!-- about-section -->
+      <div class="about__container" data-scroll-section>
+        <p class="about__container-data" data-scroll>
+          Hello! We are a full service <span>Creative Studio</span> with a multidisciplinary focus, We develop creative strategies for brands, organizations and individuals and our work knows no bounds. The services we provide is
+          <span>Art & Design, Creative Art Direction, Brand Design, Environmental Graphic Design, Web Development, Films, Photo, Content Creation, Campaigns, Packaging, Print.</span>TUNDRA Creative Studio.
+        </p>
+
+        <p data-scroll>
+          If you have any questions or would like to have a chat, don't hesitate to <span class="about__container-contact-link"><a href="https://api.whatsapp.com/send?phone=6283145818892" target="_blank">get in touch.</a></span>
+        </p>
+
+        <p class="about__container-link" data-scroll>
+          <a
+            href="https://www.google.co.id/maps/place/Jl.+Babakan+Jati+No.41,+Gumuruh,+Kec.+Batununggal,+Kota+Bandung,+Jawa+Barat+40275/@-6.9417847,107.6354156,17z/data=!3m1!4b1!4m5!3m4!1s0x2e68e86ec7a45db5:0xa16a82e5d5f1cf2f!8m2!3d-6.941321!4d107.637475"
+            target="_blank"
+            >Bandung, 40275<br />
+            INDONESIA</a
+          >.
+        </p>
+      </div>
+
+      <div class="cursor-follow"></div>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+      // smooth scroll
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector("#js-scroll"),
+        smooth: true,
+        smoothMobile: true,
+        inertia: 0.75,
+      });
+
+      // div following mouse
+      TweenMax.from(".cursor-follow", 2, {
+        delay: 1,
+        opacity: 0,
+      });
+
+      follower = document.querySelector(".cursor-follow");
+
+      posX = 0;
+      posY = 0;
+      mouseX = 0;
+      mouseY = 0;
+
+      TweenMax.to({}, 0.016, {
+        repeat: -1,
+        onRepeat: function () {
+          posX += (mouseX - posX) / 9;
+          posY += (mouseY - posY) / 9;
+
+          TweenMax.set(follower, {
+            css: {
+              left: posX - 40,
+              top: posY - 40,
+            },
+          });
+        },
+      });
+
+      document.addEventListener("mousemove", function (e) {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+      });
+    </script>
+  </body>
+</html>

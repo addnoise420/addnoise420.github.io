@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  font-family: "Neue Montreal";
+}
+
+/* about page styles */
+
+#js-scroll {
+  height: 200%;
+}
+
+.about__container {
+  width: 50%;
+  margin: 180px 0 100px 100px;
+  padding: 40px;
+  /* border: 1px solid #525252; */
+}
+
+.about__container p {
+  margin: 60px 0;
+  color: #fff;
+  font-size: 46px;
+  font-weight: 400;
+  z-index: 2;
+}
+
+.about__container p span {
+  font-family: "GrandSlang Roman";
+}
+
+.about__container-contact-link a {
+  color: #0d00ff;
+}
+
+p.about__container-link {
+  font-size: 26px;
+}
+
+.about__container-link a {
+  color: #fff;
+  font-size: 26px;
+}
+
+.cursor-follow {
+  position: absolute;
+  background: url(../images/cccccc.jpeg) no-repeat 50% 50%;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+  z-index: -1;
+
+  user-select: none;
+  pointer-events: none;
+  transform: translate(5px, 5px);
+}
+
+@media (max-width: 900px) {
+  .about__container {
+    width: 70%;
+    margin: 140px 0 60px 40px;
+  }
+
+  .cursor-follow {
+    display: none;
+  }
+  /*  */
+  .navbar {
+    display: none !important;
+  }
+}
+
+.site-logo {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Otscookie Regular";
+  font-size: 24px;
+  line-height: 100px;
+  text-transform: uppercase;
+  color: #0d00ff;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Neue Montreal";
+  text-transform: uppercase;
+  line-height: 100px;
+  color: #0d00ff;
+}
+
+.site-menu {
+  display: flex;
+}
+
+.menu-item {
+  color: #0d00ff;
+  margin-left: 60px;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 0%;
+  padding: 40px;
+  text-transform: uppercase;
+  font-family: "Helvetica";
+  font-size: 40px;
+  z-index: 2;
+  color: #ff0000;
+  margin-top: -25px;
+}
+
+.header-left span {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.link {
+  margin: 0px 0;
+}
+
+.link a {
+  font-family: "Helvetica";
+  letter-spacing: 0px;
+  font-size: 24px;
+  color: darkorange;
+}
+a {
+  text-decoration: none;
+}
